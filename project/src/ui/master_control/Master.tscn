@@ -37,8 +37,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12, 0 )
 current = true
 near = 0.01
 far = 400.0
-target = NodePath("../InterpolatedCam")
-speed = 4.0
+#target = NodePath("../InterpolatedCam")
+#speed = 4.0
 enabled = true
 script = ExtResource( 3 )
 

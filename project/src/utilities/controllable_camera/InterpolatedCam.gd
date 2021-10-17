@@ -6,7 +6,7 @@
 
 extends Camera
 
-export (float) var speed = 4.0 
+export (float) var speed = 15.0 
 export (NodePath) var target = NodePath("") setget set_target
 export (bool) var enabled = true setget set_interpolation_enabled, is_interpolation_enabled
 
