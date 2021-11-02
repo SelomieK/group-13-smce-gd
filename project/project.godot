@@ -59,6 +59,11 @@ _global_script_classes=[ {
 "language": "NativeScript",
 "path": "res://src/bind/FrameBufferConfig.gdns"
 }, {
+"base": "Spatial",
+"class": "FreeCam",
+"language": "GDScript",
+"path": "res://src/utilities/controllable_camera/FreeCam.gd"
+}, {
 "base": "",
 "class": "GDResult",
 "language": "NativeScript",
@@ -68,6 +73,11 @@ _global_script_classes=[ {
 "class": "GpioDriverConfig",
 "language": "NativeScript",
 "path": "res://src/bind/GpioDriverConfig.gdns"
+}, {
+"base": "Camera",
+"class": "InterpCam",
+"language": "GDScript",
+"path": "res://src/utilities/controllable_camera/InterpolatedCam.gd"
 }, {
 "base": "Label",
 "class": "NodeVisualizer",
@@ -180,8 +190,10 @@ _global_script_class_icons={
 "CamCtl": "",
 "ControlUtil": "",
 "FrameBufferConfig": "",
+"FreeCam": "",
 "GDResult": "",
 "GpioDriverConfig": "",
+"InterpCam": "",
 "NodeVisualizer": "",
 "NotificationDisplay": "",
 "ProfileConfig": "",
