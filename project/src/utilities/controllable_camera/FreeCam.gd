@@ -17,6 +17,8 @@
 
 extends Spatial
 
+class_name FreeCam
+
 export var disabled = false setget set_disabled
 
 var lookaround_speed = 0.01
