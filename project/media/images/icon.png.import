@@ -11,7 +11,6 @@ metadata={
 
 [deps]
 
-source_file="res://media/images/icon.png"
 dest_files=[ "res://.import/icon.png-c7ddf17ea825f0bffd1e1d023b7c4be2.s3tc.stex", "res://.import/icon.png-c7ddf17ea825f0bffd1e1d023b7c4be2.etc2.stex" ]
 
 [params]
