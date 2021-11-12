@@ -105,11 +105,3 @@ func _on_OpenPicker_file_picked(path):
 	print(path)
 	texteditor.text =f1.get_as_text()
 	poppanel.popup()
-	
-	
-	
-	
-	
-	
-	
-
