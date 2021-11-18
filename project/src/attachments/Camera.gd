@@ -46,6 +46,7 @@ var interp_cam: Camera = null
 
 var locked = null
 
+
 func set_view(_view: Node) -> void:
 	if ! _view:
 		return
@@ -163,6 +164,7 @@ func set_cam_position(transform: Transform = Transform()) -> void:
 	locked_cam.global_transform = transform
 	free_cam.global_transform = transform
 	interp_cam.global_transform = transform
+
 
 func _on_free(node) -> void:
 	if node == locked:
