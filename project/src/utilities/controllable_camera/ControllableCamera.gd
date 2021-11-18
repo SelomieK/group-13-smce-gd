@@ -18,9 +18,12 @@
 
 extends Spatial
 
+class_name LockCam
+
 var rot_x = 0
 var rot_y = 0
 var lookaround_speed = 0.01
+var basis: Basis
 
 export(int, 5, 100, 1) var scroll_limit_low = 5
 export(int, 5, 100, 1) var scroll_limit_high = 20
@@ -38,23 +41,18 @@ var target: Spatial = null setget set_target, get_target
 func set_target(trgt: Spatial) -> void:	
 
 	if is_instance_valid(target):
-		target.queue_free()
 		target = null
 		set_process(false)
 
 	if is_instance_valid(trgt):
-		target = Spatial.new()
-		trgt.add_child(target)
-		#global_transform.origin = trgt.global_transform.origin + trgt.global_transform.basis.xform((Vector3.UP) * _zoom)
-		#global_transform.origin = global_transform.origin.rotated(Vector3.UP, PI)
-		#look_at(trgt.global_transform.origin, Vector3.UP)
+		target = trgt
 		set_process(true)
 	
 	_update_pos()
 
 
 func get_target():
-	return target.get_parent() if is_instance_valid(target) else null
+	return target if is_instance_valid(target) else null
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -74,7 +72,7 @@ func _unhandled_input(event: InputEvent) -> void:
 func _update_pos():
 	rot_y = clamp(rot_y, _y_angle_limit, PI - _y_angle_limit)
 	if is_instance_valid(target):
-		target.transform.basis = Basis(Quat(Vector3(rot_y, rot_x, 0)))
+		basis = Basis(Quat(Vector3(rot_y, rot_x, 0)))
 
 
 func _ready():
@@ -86,7 +84,7 @@ func _process(delta: float) -> void:
 	if ! is_instance_valid(target):
 		set_process(false)
 		return
-	global_transform.origin = target.global_transform.origin + target.global_transform.basis.xform((Vector3.UP) * _zoom)
+	global_transform.origin = target.global_transform.origin + (basis * target.global_transform.basis).xform((Vector3.UP) * _zoom)
 	look_at(target.global_transform.origin, Vector3.UP)
 
 
