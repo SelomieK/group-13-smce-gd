@@ -54,7 +54,6 @@ onready var sketch_log = $Log/SketchLog/VBoxContainer/LogBox
 var sketch_path: String = ""
 var path1: String = ""
 var cam_ctl: CamCtl = null setget set_cam_ctl
-
 var vehicle = null
 
 
@@ -62,7 +61,7 @@ var vehicle = null
 func init(sketch: Sketch, toolchain: Toolchain):
 	
 	sketch_path = sketch.get_source()
-	
+	print(sketch_path)
 	
 	var board_config = BoardConfig.new()
 	var stock_config =  Util.read_json_file("res://share/config/smartcar_shield_board.json")
@@ -87,6 +86,7 @@ func init(sketch: Sketch, toolchain: Toolchain):
 	var board = Board.new()
 	
 	var res = board.configure(board_config)
+	print(res)
 	if ! res.ok():
 		board.free()
 		return res
@@ -104,11 +104,10 @@ func init(sketch: Sketch, toolchain: Toolchain):
 	_toolchain.connect("log", self, "_on_toolchain_log")
 	
 	add_child(board)
-	
 	return GDResult.new()
 
-
 func _ready():
+	
 	for sig in ["started", "suspended_resumed", "stopped", "cleaned"]:
 		_board.connect(sig, self, "_on_board_" + sig)
 	

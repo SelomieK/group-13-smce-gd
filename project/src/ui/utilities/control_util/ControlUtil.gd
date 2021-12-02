@@ -15,7 +15,7 @@
 #  limitations under the License.
 #
 
-class_name ControlUtil
+#class_name ControlUtil
 
 static func toggle_window(show: bool, node: Control) -> void:
 	# TODO: set proper default values at _ready

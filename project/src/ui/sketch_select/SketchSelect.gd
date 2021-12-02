@@ -155,7 +155,7 @@ func _on_file_selected(file: String):
 	error_label.text = " "
 	
 	var res = _sketch_manager.make_sketch(file)
-	
+	print(res)
 	if ! res.ok():
 		printerr(res.error())
 		error_label.text = "Error for \"%s\": %s" % [file.get_file(), res.error()]
