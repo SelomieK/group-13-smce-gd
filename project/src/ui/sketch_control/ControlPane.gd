@@ -310,6 +310,7 @@ func _show_preview_log() -> void:
 	##var f1= File.new()
 	f.open(path1,1)
 	window1.texteditor.text= f.get_as_text()
+	window1.label.text = " " + path1.get_file().get_file()
 	window1.window.visible= false
 #	var f1 = File.new() # Replace with function body.
 #	f.open(path1,2)

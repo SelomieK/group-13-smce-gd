@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/ui/sketch_control/preview.gd" type="Script" id=1]
 [ext_resource path="res://src/ui/file_dialog/FilePicker.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/ui/themes/regular_button/disabled.tres" type="StyleBox" id=3]
+[ext_resource path="res://src/ui/themes/regular_button/hover.tres" type="StyleBox" id=4]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.0941176, 0.0941176, 0.0941176, 1 )
@@ -10,13 +11,17 @@ shadow_color = Color( 0, 0, 0, 0.207843 )
 shadow_size = 8
 
 [sub_resource type="StyleBoxFlat" id=2]
+
+[sub_resource type="StyleBoxFlat" id=3]
+
+[sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0, 0, 0, 0 )
 border_color = Color( 0, 0.45098, 0.752941, 1 )
 shadow_color = Color( 0, 0, 0, 0.282353 )
 
-[sub_resource type="StyleBoxEmpty" id=3]
+[sub_resource type="StyleBoxEmpty" id=5]
 
-[sub_resource type="StyleBoxEmpty" id=4]
+[sub_resource type="StyleBoxEmpty" id=6]
 
 [node name="PreviewPopout" type="MarginContainer"]
 anchor_right = 1.0
@@ -77,27 +82,6 @@ __meta__ = {
 margin_right = 1011.0
 margin_bottom = 555.0
 
-[node name="File" type="MenuButton" parent="Panel/MarginContainer/Panel/PopupPanel/VBoxContainer/Control"]
-margin_left = 1.0
-margin_top = -2.0
-margin_right = 37.0
-margin_bottom = 24.0
-text = "File"
-clip_text = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TextEdit" type="TextEdit" parent="Panel/MarginContainer/Panel/PopupPanel/VBoxContainer/Control"]
-margin_left = 14.0
-margin_top = 30.0
-margin_right = 1003.0
-margin_bottom = 534.0
-show_line_numbers = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="CloseButton" type="Button" parent="Panel/MarginContainer/Panel/PopupPanel/VBoxContainer/Control"]
 margin_left = 976.0
 margin_top = 3.0
@@ -105,6 +89,85 @@ margin_right = 1006.0
 margin_bottom = 29.0
 text = "X"
 flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="save" type="Button" parent="Panel/MarginContainer/Panel/PopupPanel/VBoxContainer/Control"]
+margin_left = 13.5717
+margin_top = 1.74008
+margin_right = 56.5717
+margin_bottom = 27.7401
+text = "Save"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="open" type="Button" parent="Panel/MarginContainer/Panel/PopupPanel/VBoxContainer/Control"]
+margin_left = 66.5717
+margin_top = 1.74008
+margin_right = 115.572
+margin_bottom = 27.7401
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+text = "Open"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="new" type="Button" parent="Panel/MarginContainer/Panel/PopupPanel/VBoxContainer/Control"]
+margin_left = 125.0
+margin_top = 2.0
+margin_right = 156.0
+margin_bottom = 28.0
+custom_styles/hover = ExtResource( 4 )
+text = "+"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="PanelContainer" parent="Panel/MarginContainer/Panel/PopupPanel/VBoxContainer/Control"]
+margin_top = 61.0
+margin_right = 998.0
+margin_bottom = 551.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextEdit" type="TextEdit" parent="Panel/MarginContainer/Panel/PopupPanel/VBoxContainer/Control/Panel"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 991.0
+margin_bottom = 483.0
+show_line_numbers = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelContainer" type="VBoxContainer" parent="Panel/MarginContainer/Panel/PopupPanel/VBoxContainer/Control"]
+margin_left = 2.0
+margin_top = 38.0
+margin_right = 991.0
+margin_bottom = 63.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/Panel/PopupPanel/VBoxContainer/Control/PanelContainer"]
+margin_right = 989.0
+
+[node name="Control" type="Control" parent="Panel/MarginContainer/Panel/PopupPanel/VBoxContainer/Control/PanelContainer/VBoxContainer"]
+margin_right = 989.0
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/Panel/PopupPanel/VBoxContainer/Control/PanelContainer/VBoxContainer/Control"]
+margin_left = 4.0
+margin_top = -1.0
+margin_right = 92.0
+margin_bottom = 25.0
+text = "test.ino"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -135,7 +198,7 @@ anchor_bottom = 0.0
 margin_top = 0.0
 margin_right = 1024.0
 margin_bottom = 591.0
-custom_styles/panel = SubResource( 2 )
+custom_styles/panel = SubResource( 4 )
 mode = 0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Panel/Filepicker/VBoxContainer/TextAttach"]
@@ -144,8 +207,8 @@ margin_bottom = 591.0
 focus_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/focus = SubResource( 3 )
-custom_styles/normal = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
 custom_colors/selection_color = Color( 0.439216, 0.439216, 0.439216, 0.4 )
 scroll_following = true
 selection_enabled = true
@@ -176,7 +239,7 @@ anchor_bottom = 0.0
 margin_top = 0.0
 margin_right = 1024.0
 margin_bottom = 591.0
-custom_styles/panel = SubResource( 2 )
+custom_styles/panel = SubResource( 4 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Panel/Openpicker/VBoxContainer/TextAttach"]
 margin_right = 1024.0
@@ -184,11 +247,12 @@ margin_bottom = 591.0
 focus_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/focus = SubResource( 3 )
-custom_styles/normal = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
 custom_colors/selection_color = Color( 0.439216, 0.439216, 0.439216, 0.4 )
 scroll_following = true
 selection_enabled = true
 
+[connection signal="pressed" from="Panel/MarginContainer/Panel/PopupPanel/VBoxContainer/Control/new" to="." method="_on_new_pressed"]
 [connection signal="file_picked" from="Panel/Filepicker/VBoxContainer/TextAttach/FilePicker" to="." method="_on_FilePicker_file_picked"]
 [connection signal="file_picked" from="Panel/Openpicker/VBoxContainer/TextAttach/OpenPicker" to="." method="_on_OpenPicker_file_picked"]

@@ -57,7 +57,7 @@ func test_setgetcheck():
 	var debug =load("res://src/ui/utilities/debug_canvas/DebugCanvas.tscn").instance()
 	assert_setget(debug,'disabled',true,false)
 	var cam =load("res://src/ui/utilities/controllable_camera/ControllableCamera.gd").new()
-	gut.p('-- Failing --')
+	gut.p('-- Failing --') 
 	_assert_setget_called(cam,'target','set_target','get_target')
 
 func test_status():
