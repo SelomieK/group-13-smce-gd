@@ -13,7 +13,6 @@ onready var filepicker_window = $Panel/Filepicker
 onready var openpicker_window = $Panel/Openpicker
 onready var window = $Panel
 onready var select_window =$Panel/MarginContainer/
-onready var main = $PrewiewPopout
 onready var filepicker = $Panel/Filepicker/VBoxContainer/TextAttach/FilePicker
 onready var openpicker = $Panel/Openpicker/VBoxContainer/TextAttach/OpenPicker
 onready var poppanel =$Panel/MarginContainer/Panel/PopupPanel

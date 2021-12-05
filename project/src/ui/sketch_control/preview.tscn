@@ -142,6 +142,7 @@ margin_left = 7.0
 margin_top = 7.0
 margin_right = 991.0
 margin_bottom = 483.0
+syntax_highlighting = true
 show_line_numbers = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -253,6 +254,5 @@ custom_colors/selection_color = Color( 0.439216, 0.439216, 0.439216, 0.4 )
 scroll_following = true
 selection_enabled = true
 
-[connection signal="pressed" from="Panel/MarginContainer/Panel/PopupPanel/VBoxContainer/Control/new" to="." method="_on_new_pressed"]
 [connection signal="file_picked" from="Panel/Filepicker/VBoxContainer/TextAttach/FilePicker" to="." method="_on_FilePicker_file_picked"]
 [connection signal="file_picked" from="Panel/Openpicker/VBoxContainer/TextAttach/OpenPicker" to="." method="_on_OpenPicker_file_picked"]
