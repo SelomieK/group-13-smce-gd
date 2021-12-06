@@ -52,7 +52,7 @@ __meta__ = {
 [node name="Panel" type="PanelContainer" parent="."]
 margin_left = 128.0
 margin_top = 64.0
-margin_right = 972.0
+margin_right = 1048.0
 margin_bottom = 656.0
 rect_min_size = Vector2( 100, 100 )
 size_flags_horizontal = 3
@@ -60,24 +60,24 @@ size_flags_vertical = 3
 custom_styles/panel = SubResource( 1 )
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel"]
-margin_right = 844.0
+margin_right = 920.0
 margin_bottom = 592.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer"]
-margin_right = 844.0
+margin_right = 920.0
 margin_bottom = 592.0
 
 [node name="Control2" type="Control" parent="Panel/MarginContainer/VBoxContainer"]
-margin_right = 844.0
+margin_right = 920.0
 
 [node name="upgrade" type="Button" parent="Panel/MarginContainer/VBoxContainer/Control2"]
 anchor_left = 0.433
 anchor_right = 0.433
-margin_left = 128.402
+margin_left = 122.402
 margin_top = 2.66516
-margin_right = 303.402
+margin_right = 297.402
 margin_bottom = 36.6652
 custom_styles/hover = SubResource( 2 )
 text = "Upgrade SMCE-GD"
@@ -98,9 +98,9 @@ __meta__ = {
 }
 
 [node name="compile" type="Button" parent="Panel/MarginContainer/VBoxContainer/Control2"]
-margin_left = 178.12
+margin_left = 165.061
 margin_top = 2.66327
-margin_right = 354.12
+margin_right = 341.061
 margin_bottom = 36.6633
 theme = SubResource( 3 )
 custom_styles/hover = SubResource( 4 )
@@ -110,10 +110,10 @@ __meta__ = {
 }
 
 [node name="getstarted" type="Button" parent="Panel/MarginContainer/VBoxContainer/Control2"]
-margin_left = 2.43869
-margin_top = 3.43878
-margin_right = 177.439
-margin_bottom = 37.4388
+margin_left = 2.0
+margin_top = 3.0
+margin_right = 162.0
+margin_bottom = 37.0
 theme = SubResource( 5 )
 custom_styles/hover = SubResource( 6 )
 text = "Getting Started"
@@ -125,10 +125,10 @@ __meta__ = {
 [node name="example" type="Button" parent="Panel/MarginContainer/VBoxContainer/Control2"]
 anchor_left = 0.617
 anchor_right = 0.617
-margin_left = -219.2
-margin_top = 2.7736
-margin_right = -44.2003
-margin_bottom = 36.7736
+margin_left = -224.26
+margin_top = 1.71414
+margin_right = -49.2598
+margin_bottom = 35.7141
 custom_styles/hover = SubResource( 7 )
 text = "Example Sketch"
 __meta__ = {
@@ -136,9 +136,9 @@ __meta__ = {
 }
 
 [node name="CloseButton" type="Button" parent="Panel/MarginContainer/VBoxContainer"]
-margin_left = 799.0
+margin_left = 875.0
 margin_top = 4.0
-margin_right = 844.0
+margin_right = 920.0
 margin_bottom = 34.0
 rect_min_size = Vector2( 45, 30 )
 mouse_default_cursor_shape = 2
@@ -155,17 +155,17 @@ __meta__ = {
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel/MarginContainer/VBoxContainer"]
 margin_top = 38.0
-margin_right = 844.0
+margin_right = 920.0
 margin_bottom = 38.0
 
 [node name="Control" type="Control" parent="Panel/MarginContainer/VBoxContainer/MarginContainer"]
-margin_right = 844.0
+margin_right = 920.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/Control"]
 margin_left = -1.33484
-margin_top = -1.33484
+margin_top = 6.08142
 margin_right = 1011.67
-margin_bottom = 560.665
+margin_bottom = 568.081
 bbcode_enabled = true
 __meta__ = {
 "_edit_use_anchors_": false

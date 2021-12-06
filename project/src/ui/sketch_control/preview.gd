@@ -4,13 +4,15 @@ extends MarginContainer
 
 signal exited
 onready var close_btn = $Panel/MarginContainer/Panel/PopupPanel/VBoxContainer/Control/CloseButton
-onready var texteditor = $Panel/MarginContainer/Panel/PopupPanel/VBoxContainer/Control/TextEdit
-onready var file_btn = $Panel/MarginContainer/Panel/PopupPanel/VBoxContainer/Control/File
+onready var save_btn = $Panel/MarginContainer/Panel/PopupPanel/VBoxContainer/Control/save
+onready var open_btn = $Panel/MarginContainer/Panel/PopupPanel/VBoxContainer/Control/open
+onready var new_btn = $Panel/MarginContainer/Panel/PopupPanel/VBoxContainer/Control/new
+onready var texteditor = $Panel/MarginContainer/Panel/PopupPanel/VBoxContainer/Control/Panel/TextEdit
+onready var label = $Panel/MarginContainer/Panel/PopupPanel/VBoxContainer/Control/PanelContainer/VBoxContainer/Control/Label
 onready var filepicker_window = $Panel/Filepicker
 onready var openpicker_window = $Panel/Openpicker
 onready var window = $Panel
 onready var select_window =$Panel/MarginContainer/
-onready var main = $PrewiewPopout
 onready var filepicker = $Panel/Filepicker/VBoxContainer/TextAttach/FilePicker
 onready var openpicker = $Panel/Openpicker/VBoxContainer/TextAttach/OpenPicker
 onready var poppanel =$Panel/MarginContainer/Panel/PopupPanel
@@ -22,10 +24,11 @@ func _gui_input(event: InputEvent):
 
 func _ready() -> void:
 	close_btn.connect("pressed", self, "_on_close")
-	file_btn.get_popup().add_item("Save")
-	file_btn.get_popup().add_item("Open")
-	file_btn.get_popup().connect("id_pressed",self,"_on_item_pressed")
+	save_btn.connect("pressed",self,"_on_save")
+	open_btn.connect("pressed",self,"_on_open")
+	new_btn.connect("pressed",self,"_on_new_pressed")
 	poppanel.popup()
+	
 	
 func _on_save() -> void:
 	window.visible=true
@@ -52,16 +55,6 @@ func _on_open() -> void:
 	tween.start()
 	yield(tween, "tween_all_completed")
 	select_window.visible = false
-
-	
-func _on_item_pressed(id):
-	var item_name = file_btn.get_popup().get_item_text(id)
-	if item_name == 'Save':
-		_on_save()
-	if item_name == 'Open':
-		_on_open()
-		
-#	print(item_name+ 'pressed')
 
 	
 func _on_close() -> void:
@@ -102,6 +95,19 @@ func _on_OpenPicker_file_picked(path):
 	#tween.interpolate_property(select_window, "modulate:a", 1, 0, 0.15)
 	var f1 =File.new()
 	f1.open(path,1)
-	print(path)
 	texteditor.text =f1.get_as_text()
+	label.text = " " + path.get_file().get_file()
+	poppanel.popup()
+
+
+func _on_new_pressed():
+	window.visible=false
+	#poppanel.popup()
+	var tween = Tween.new()
+	add_child(tween)
+	tween.interpolate_property(poppanel, "rect_scale:y", 1, 0, 0.3, Tween.TRANS_CUBIC)
+	#tween.interpolate_property(select_window, "modulate:a", 1, 0, 0.15)
+	var f1 = " "
+	texteditor.text =f1
+	label.text = "Untitled.ino"
 	poppanel.popup()
