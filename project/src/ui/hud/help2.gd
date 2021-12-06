@@ -11,15 +11,15 @@ func load_text_file(path,name,name2):
 		f.open(path,1)
 		label.text = f.get_as_text()
 		if name2 == "compile":
-			var t1 = Texture.new()
+			var t1 = Texture
 			t1 =load("res://help/1.png")
 			label.add_image(t1,290,250)
 			label.add_text("   ")
-			var t2 = Texture.new()
+			var t2 = Texture
 			t2 =load("res://help/2.png")
 			label.add_image(t2,300,250)
 			label.add_text("   ")
-			var t3 = Texture.new()
+			var t3 = Texture
 			t3 =load("res://help/3.png")
 			label.add_image(t3,290,250)
 			
@@ -27,10 +27,6 @@ func load_text_file(path,name,name2):
 func _ready():
 	 label.bbcode_enabled =true
 	 label.bbcode_text = "[b][color=green]%s[/color][/b]" %  "Welcome to SMCE-gd Help - A  frontend for libSMCE made with godot using gdnative \n"
-	 var t4 = Texture.new()
-	 t4 =load("res://help/logo.png")
-	# label.add_image(t4,290,250)
-	 label.add_image(t4,910,500)
 	 
 
 	
