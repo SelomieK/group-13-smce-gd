@@ -135,13 +135,14 @@ func _open() -> void:
 
 func _select_sketch() -> void:
 	var selected = itemlist.get_selected_items()
-	
+	print("SELECTED",selected)
 	if selected.empty():
 		return
 	
 	var sketch: Sketch = itemlist.get_item_metadata(selected[0])
 	
 	_selected_sketch = sketch
+	print("selected:sketch",sketch)
 	emit_signal("sketch_selected", sketch)
 	print("Sketch selected: %s - %s" % [sketch.get_uuid(), sketch.get_source()])
 	_close()

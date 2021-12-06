@@ -162,7 +162,7 @@ func _on_toolchain_built(sketch, result, toolchain, notif):
 		print("Compile finished succesfully")
 		_create_notification("Compile succeeded for sketch '%s'" % sketch.get_source().get_file(), 5)
 
-########################################################
+
 func _new_slot():
 	var activate_btn = button_t.instance()
 	var wrap = Control.new()

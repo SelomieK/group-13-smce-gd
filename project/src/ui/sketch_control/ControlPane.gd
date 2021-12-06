@@ -61,8 +61,8 @@ var vehicle = null
 func init(sketch: Sketch, toolchain: Toolchain):
 	
 	sketch_path = sketch.get_source()
-	print(sketch_path)
-	
+	#print(sketch_path)
+	#print(sketch)
 	var board_config = BoardConfig.new()
 	var stock_config =  Util.read_json_file("res://share/config/smartcar_shield_board.json")
 	var json_config = Util.read_json_file(sketch_path.get_base_dir().plus_file("board_config.json"))
@@ -92,6 +92,11 @@ func init(sketch: Sketch, toolchain: Toolchain):
 		return res
 	
 	var attach_res = board.attach_sketch(sketch)
+	print(attach_res)
+	print(attach_res)
+	print(attach_res)
+	print(attach_res)
+	
 	if ! attach_res.ok():
 		board.free()
 		return attach_res
@@ -310,7 +315,6 @@ func _show_preview_log() -> void:
 	##var f1= File.new()
 	f.open(path1,1)
 	window1.texteditor.text= f.get_as_text()
-	window1.label.text = " " + path1.get_file().get_file()
 	window1.window.visible= false
 #	var f1 = File.new() # Replace with function body.
 #	f.open(path1,2)
