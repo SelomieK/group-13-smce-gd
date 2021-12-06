@@ -27,7 +27,9 @@ func load_text_file(path,name,name2):
 func _ready():
 	 label.bbcode_enabled =true
 	 label.bbcode_text = "[b][color=green]%s[/color][/b]" %  "Welcome to SMCE-gd Help - A  frontend for libSMCE made with godot using gdnative \n"
-	 
+	 var t4= Texture
+	 t4 =load("res://help/logo.png")
+	 label.add_image(t4,910,500)
 
 	
 
