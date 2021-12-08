@@ -1,3 +1,4 @@
+
 extends "res://addons/gut/test.gd"
 
 var sketchs =load("res://src/ui/sketch_select/SketchSelect.gd")
@@ -20,6 +21,13 @@ func test_filexists():
 
 #Visualize function working 
 func test_visualcontentisnotempty():
+		var my_obj = process.new()
+		var a = my_obj.visualize_content()
+		var b = my_obj.visualize()
+		assert_not_null(a)
+		assert_not_null(b)
+
+func test_visualcontentisnotempty2():
 		var my_obj = process.new()
 		var a = my_obj.visualize_content()
 		var b = my_obj.visualize()
